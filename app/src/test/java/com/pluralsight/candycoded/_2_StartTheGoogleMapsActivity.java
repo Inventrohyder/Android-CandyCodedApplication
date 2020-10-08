@@ -80,7 +80,7 @@ public class _2_StartTheGoogleMapsActivity {
 
             try {
                 //infoActivity.createMapIntent(null);
-                Method myMethod =  InfoActivity.class
+                Method myMethod = InfoActivity.class
                         .getMethod("createMapIntent", View.class);
                 Object[] param = {null};
                 myMethod.invoke(infoActivity, param);
@@ -146,7 +146,7 @@ public class _2_StartTheGoogleMapsActivity {
         Method myMethod = null;
 
         try {
-            myMethod =  InfoActivity.class
+            myMethod = InfoActivity.class
                     .getMethod("createMapIntent", View.class);
         } catch (NoSuchMethodException e) {
             //e.printStackTrace();
@@ -160,7 +160,7 @@ public class _2_StartTheGoogleMapsActivity {
         ArrayList<XMLTestHelpers.ViewContainer> viewContainers = readLayoutXML(LAYOUT_XML_FILE);
         XMLTestHelpers.ViewContainer addressView =
                 new XMLTestHelpers.ViewContainer("@+id/text_view_address", "createMapIntent", "true");
-        boolean address_set_correct =  viewContainers.contains(addressView);
+        boolean address_set_correct = viewContainers.contains(addressView);
 
         Assert.assertTrue("In activity_info.xml, the TextView text_view_address does not have " +
                         "the clickable and onClick properties set.",
